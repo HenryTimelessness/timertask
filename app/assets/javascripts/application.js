@@ -14,4 +14,5 @@
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
+//= require jquery.stopwatch
 //= require_tree .
