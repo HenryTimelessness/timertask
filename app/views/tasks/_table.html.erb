@@ -1,0 +1,29 @@
+<table  id="tasks-table" class="table striped bordered highlight">
+  <thead>
+  <tr>
+            <th>Name</th>
+            <th>Duration in seconds</th>
+        <th></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @tasks.each do |task| %>
+  <tr>
+            <td><%= task.name %></td>
+            <td><%= task.duration_in_seconds %></td>
+        <td class="row">
+      <%= link_to task, method: :delete, data: {confirm: 'Are you sure?'} do %>
+          <i class="material-icons right">delete</i>
+      <% end %>
+      <%= link_to edit_task_path(task) do %>
+          <i class="material-icons right">edit</i>
+      <% end %>
+      <%= link_to task do %>
+          <i class="material-icons right">pageview</i>
+      <% end %>
+    </td>
+  </tr>
+  <% end %>
+  </tbody>
+</table>

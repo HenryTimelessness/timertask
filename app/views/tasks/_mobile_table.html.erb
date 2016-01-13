@@ -1,0 +1,25 @@
+<% @tasks.each do |task| %>
+<div class="card">
+  <div class="card-content">
+    <span class="card-title grey-text text-darken-4"><%= task.id %></span>
+    <div class="right">
+      <span class="card-title activator grey-text text-darken-4"><i class="material-icons">more_vert</i></span>
+    </div>
+            <strong>Name</strong>: <%= task.name %>
+            <strong>Duration in seconds</strong>: <%= task.duration_in_seconds %>
+      </div>
+  <div class="card-reveal">
+    <span class="card-title grey-text text-darken-4">Action<i class="material-icons right">close</i></span>
+
+    <%= link_to task, method: :delete, data: {confirm: 'Are you sure?'} do %>
+    <i class="material-icons right">delete</i>
+    <% end %>
+    <%= link_to edit_task_path(task) do %>
+    <i class="material-icons right">edit</i>
+    <% end %>
+    <%= link_to task do %>
+    <i class="material-icons right">pageview</i>
+    <% end %>
+  </div>
+</div>
+<% end %>

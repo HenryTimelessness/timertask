@@ -1,0 +1,21 @@
+<h1>Tasks List</h1>
+
+<div class="fixed-action-btn">
+  <%= link_to new_task_path, class: "btn-floating btn-large" do %>
+  <i class="material-icons tooltipped" data-position="top" data-delay="50" data-tooltip="New Task">add</i>
+  <% end %>
+</div>
+
+<div id="tasks-container">
+  <div class="row">
+    <div class="col s12">
+      <div class="hide-on-med-and-down">
+        <%= render partial: 'table' %>
+      </div>
+
+      <div class="show-on-med hide-on-large-only">
+        <%= render partial: 'mobile_table' %>
+      </div>
+    </div>
+  </div>
+</div>
