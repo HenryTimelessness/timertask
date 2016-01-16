@@ -9,9 +9,9 @@
         <table id="tasks-table" class="table striped bordered highlight">
           <thead>
           <tr>
-            <th>Name</th>
             <th>Duration</th>
             <th>Completion</th>
+            <th>Name</th>
             <th>Time Spent</th>
             <th>Start/Pause/Reset</th>
           </tr>
@@ -20,10 +20,10 @@
           <tbody>
           <% @tasks.each do |task| %>
               <tr>
-                <td><%= task.name %></td>
                 <td><%= task.duration_in_seconds %></td>
                 <td>TBD</td>
-                <td>
+                <td class="big-text"><%= task.name %></td>
+                <td class="big-text">
                   <div class="timer" data-task="<%= task.id %>">00:00:00</div>
                 </td>
                 <td class="row">

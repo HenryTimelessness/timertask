@@ -1,29 +1,40 @@
-<table  id="tasks-table" class="table striped bordered highlight">
-  <thead>
-  <tr>
-            <th>Name</th>
-            <th>Duration in seconds</th>
-        <th></th>
-  </tr>
-  </thead>
+<div class="container">
+  <div class="row">
+    <div class="col s12">
+      <table id="tasks-table" class="table striped bordered highlight">
+        <thead>
+        <tr>
+          <th>Name</th>
+          <th>Time Spent</th>
+          <th>Start/Pause/Reset</th>
+          <td></td>
+        </tr>
+        </thead>
 
-  <tbody>
-  <% @tasks.each do |task| %>
-  <tr>
-            <td><%= task.name %></td>
-            <td><%= task.duration_in_seconds %></td>
-        <td class="row">
-      <%= link_to task, method: :delete, data: {confirm: 'Are you sure?'} do %>
-          <i class="material-icons right">delete</i>
-      <% end %>
-      <%= link_to edit_task_path(task) do %>
-          <i class="material-icons right">edit</i>
-      <% end %>
-      <%= link_to task do %>
-          <i class="material-icons right">pageview</i>
-      <% end %>
-    </td>
-  </tr>
-  <% end %>
-  </tbody>
-</table>
+        <tbody>
+        <% @tasks.each do |task| %>
+            <tr>
+              <td class="med-text"><%= task.name %></td>
+              <td class="big-text">
+                <div class="timer" data-task="<%= task.id %>">00:00:00</div>
+              </td>
+              <td class="row">
+                <%= button_tag "Start", type: :button, class: 'btn timer-btn-start', data: {task: task.id} %>
+                <%= button_tag "Stop", type: :button, class: 'btn timer-btn-stop', data: {task: task.id} %>
+                <%= button_tag "Reset", type: :button, class: 'btn timer-btn-reset', data: {task: task.id} %>
+              </td>
+              <td class="row">
+                <%= link_to task, method: :delete, data: {confirm: 'Are you sure?'} do %>
+                    <i class="material-icons right">delete</i>
+                <% end %>
+                <%= link_to edit_task_path(task) do %>
+                    <i class="material-icons right">edit</i>
+                <% end %>
+              </td>
+            </tr>
+        <% end %>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
