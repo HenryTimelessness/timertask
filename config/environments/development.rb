@@ -38,4 +38,11 @@ Rails.application.configure do
 
   # Raises error for missing translations
   # config.action_view.raise_on_missing_translations = true
+
+  # Setup mailcatcher see http://mailcatcher.me/
+  config.action_mailer.delivery_method = :smtp
+  config.action_mailer.smtp_settings = { :address => "localhost", :port => 1025 }
+
+  # Setup devise to send mails to port 1025 where mailcatcher is hosted
+  config.action_mailer.default_url_options = { host: 'localhost', port: 1025 }
 end

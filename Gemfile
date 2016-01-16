@@ -23,14 +23,20 @@ gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
 gem 'sdoc', '~> 0.4.0', group: :doc
 
+# CSS framework for material design
 gem 'materialize-sass'
 
+# View gems for forms
 gem 'simple_form'
 
 # Use Puma as the app server
 gem 'puma'
 
+# 12 factor needed to deploy to heroku or dokku
 gem 'rails_12factor'
+
+# Use Devise for authentication
+gem 'devise'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
