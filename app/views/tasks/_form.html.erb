@@ -11,7 +11,7 @@
       <div class="card-content">
       <div class="card-title">Details</div>
           <%= f.input :name %>
-          <%= f.input :duration_in_seconds %>
+          <%= f.input :duration_in_seconds, as: :string, input_html: {class: 'duration-picker'} %>
       </div>
     </div>
   </div>

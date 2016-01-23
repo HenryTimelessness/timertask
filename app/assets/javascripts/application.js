@@ -11,8 +11,11 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require materialize-sprockets
 //= require jquery_ujs
 //= require turbolinks
 //= require jquery.stopwatch
+//= require jquery-duration-picker
+//= require pickadate/picker.time
 //= require_tree .
